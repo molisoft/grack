@@ -171,6 +171,8 @@ module Grack
     def get_git_dir(path)
       root = @config[:project_root] || `pwd`
       path = File.join(root, path)
+      path += '.git' unless path.end_with? '.git'
+      
       if File.exists?(path) # TODO: check is a valid git directory
         return path
       end
