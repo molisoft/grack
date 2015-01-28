@@ -8,7 +8,7 @@ module Grack
 
     def new(config)
       Rack::Builder.new do
-        use Grack::Auth do |username, password|
+        use Grack::Auth do | password|
           false
         end
 
